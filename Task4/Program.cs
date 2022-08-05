@@ -9,13 +9,9 @@ int Prompt(string message)
 }
 
 int num = Prompt("Введите число >");
-int count = 1;
-while (count <= num) {
-    if ((count % 2) == 0)
-    {
-        System.Console.Write($"{count}, ");
-    }
-    count++;
-}
+int count = 2;
 
-// System.Console.WriteLine(ParityCheck(num));
+while (count <= num) {
+        System.Console.Write($"{count}, ");
+    count += 2;
+}
