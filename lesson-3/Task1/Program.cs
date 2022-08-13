@@ -10,7 +10,7 @@ string NumberRev(string value)
     int num = int.Parse(value);
     string result = "";
     int a = 0;
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < value.Length; i++)
     {
         a = num % 10;
         num = num / 10;
