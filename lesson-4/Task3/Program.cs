@@ -1,27 +1,46 @@
 ﻿// Задача 3: Напишите программу, которая задаёт массив из 8 элементов, выводит их на экран. И ищет второй максимум (элемент меньше максимального, но больше всех остальных)
 
-int Prompt(string message)
+void randomArray (int[] array)
 {
-    System.Console.Write(message);
-    string value = Console.ReadLine();
-    int result = int.Parse(value);
-    return result;
-}
-
-int Sum(int number)
-{   
-    int result = 0;
-    while (number > 0)
+    for (int i = 0; i < array.Length; i++) 
     {
-        int a = number % 10;
-        result += a;
-        number = number / 10;
-    };
-    return result;
+        array[i] = new Random().Next(1, 100);
+    }
 }
 
-int number = Prompt("Введите число >");
-int sumNumber = Sum(number);
-System.Console.Write(sumNumber);
+void showArray (int[] array)
+{
+    for (int i = 0; i < array.Length; i++) 
+    {
+        System.Console.Write($"{array[i]}  ");
+    }
+}
+
+int FindSecondMax(int[] array)
+{   
+    int firstMax = 0;
+    int secondMax = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] > firstMax)
+        {
+            firstMax = array[i];
+        }
+    };
+    for (int j = 0; j < array.Length; j++)
+    {
+        if (array[j] > secondMax && array[j] < firstMax)
+        {
+            secondMax = array[j];
+        }
+    };
+    return secondMax;
+}
+
+int[] array = new int[8];
+randomArray(array);
+showArray(array);
+System.Console.WriteLine("");
+System.Console.WriteLine($"Второе максимальное число => {FindSecondMax(array)}");
 
 
