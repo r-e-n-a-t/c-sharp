@@ -53,7 +53,7 @@ double CompareNum(double[] array)
     return result;
 }
 
-double[] array = CreateArray(5, 0, 100);
+double[] array = CreateArray(5, -100, 100);
 showArray(array);
 System.Console.WriteLine($"Разница между максимальным и минимальным элементом => {CompareNum(array)}");
 
