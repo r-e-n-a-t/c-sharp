@@ -36,7 +36,7 @@ void showTwoDimArray(int[,] array)
 bool CheckIndexes(int[,] array, int line, int column)
 {
     bool result = true;
-    if (array.GetLength(0) < line || array.GetLength(1) < column)
+    if (array.GetLength(0) <= line || array.GetLength(1) <= column)
     {
         result = false;
     }
@@ -45,7 +45,7 @@ bool CheckIndexes(int[,] array, int line, int column)
 
 void FindElement(int[,] array, int line, int column) 
 {
-    if (CheckIndexes(array, line, column))
+    if (CheckIndexes(array, line, column))  
     {
         System.Console.Write(array[line, column]);
     }
