@@ -15,7 +15,7 @@ double[,] CreateTwoDimArray(int lines, int columns, int min, int max)
         {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            array[i, j] = new Random().Next(min, max) / 10.0;
+            array[i, j] = new Random().Next(min, max) / 10;
         }
         }
     return array;
