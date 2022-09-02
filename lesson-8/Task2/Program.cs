@@ -55,7 +55,7 @@ int SearchSmallestLine(int[,] array)
     return line;
 }
 
-int[,] array = CreateTwoDimArray(5, 3, 1, 10);
+int[,] array = CreateTwoDimArray(3, 3, 1, 10);
 ShowTwoDimArray(array);
 System.Console.WriteLine();
 System.Console.WriteLine($"Строка с наименьшей суммой элементов -> {SearchSmallestLine(array)}");
