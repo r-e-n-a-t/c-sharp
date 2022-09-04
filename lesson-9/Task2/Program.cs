@@ -8,10 +8,7 @@ int Prompt(string message)
 
 int FindSum(int m, int n)
 {
-    int sum = 0;
-    if (m > n) return sum;
-    sum += m;
-    return FindSum(m + 1, n) + sum;
+    return m > n ? 0 : FindSum(m + 1, n) + m;
 }
 
 int sum = FindSum(Prompt("Введите число M > "), Prompt("Введите число N > "));
