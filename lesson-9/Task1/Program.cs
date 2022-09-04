@@ -3,22 +3,14 @@
 int Prompt(string message)
 {
     System.Console.Write(message);
-    string value = Console.ReadLine();
-    int result = int.Parse(value);
-    return result;
+    return int.Parse(Console.ReadLine());
 }
 
 void FindPositiveNums(int m, int n)
 {
-    if (m <= n) 
-    {
-        if (m % 2 == 0) System.Console.Write($"{m} ");
-        FindPositiveNums(m + 1, n);
-    }
-
+    if (m > n) return;
+    if (m % 2 == 0) System.Console.Write($"{m} ");
+    FindPositiveNums(m + 1, n);
 }
 
-int m = Prompt("Введите первое число > ");
-int n = Prompt("Введите второе число > ");
-FindPositiveNums(m, n);
-
+FindPositiveNums(Prompt("Введите первое число > "), Prompt("Введите второе число > "));
