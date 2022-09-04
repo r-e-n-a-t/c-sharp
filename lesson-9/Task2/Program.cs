@@ -1,23 +1,18 @@
-﻿// Задача 2: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N с помощью рекурсии.
-
-int sum = 0;
+﻿// Задача 2: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутк
 
 int Prompt(string message)
 {
     System.Console.Write(message);
-    string value = Console.ReadLine();
-    int result = int.Parse(value);
-    return result;
+    return int.Parse(Console.ReadLine());
 }
 
-void FindSum(int m, int n)
+int FindSum(int m, int n)
 {
-    if (m <= n) 
-    {
-        sum += m;
-        FindSum(m + 1, n);
-    }
+    int sum = 0;
+    if (m > n) return sum;
+    sum += m;
+    return FindSum(m + 1, n) + sum;
 }
 
-FindSum(Prompt("Введите число M > "), Prompt("Введите число N > "));
+int sum = FindSum(Prompt("Введите число M > "), Prompt("Введите число N > "));
 System.Console.WriteLine($"Cумма элементов в промежутке от M до N -> {sum}");
